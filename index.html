@@ -90,12 +90,54 @@
             mix-blend-mode: screen;
             opacity: 0.4;
         }
+        body {
+            overflow-x: hidden;
+        }
+        .responsive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .responsive-card {
+            width: 90%;
+            max-width: 380px;
+            margin: 0 auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .hero-mockup {
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .hero-mockup {
+                transform: none !important;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-mockup {
+                transform: none !important;
+            }
+            .tablet-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (min-width: 1025px) {
+            .hero-mockup {
+                transform: rotate(3deg);
+            }
+            .hero-mockup:hover {
+                transform: rotate(0deg);
+            }
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_10px_40px_rgba(165,47,86,0.06)]">
-<div class="flex justify-between items-center px-8 py-4 max-w-[1100px] mx-auto">
+<div class="responsive-container py-4 flex justify-between items-center w-full">
 <span class="text-2xl font-bold tracking-tighter text-primary"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-primary fill-1">water_drop</span><span>Flowly</span></div></span>
 <div class="hidden md:flex gap-8 items-center">
 <button data-cta="scroll" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-all active:scale-95">Get Early Access</button>
@@ -107,8 +149,8 @@
 </nav>
 <main class="pt-24">
 <!-- Section 1: Hero -->
-<section class="max-w-[1100px] mx-auto px-8 py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center">
-<div class="space-y-8">
+<section class="responsive-container py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8 flex flex-col items-center md:items-start text-center md:text-left">
 <span class="text-xs font-medium tracking-[0.05em] uppercase text-primary bg-primary-fixed px-3 py-1 rounded-full">Coming Soon</span>
 <h1 class="text-5xl md:text-7xl font-bold text-on-surface tracking-tight leading-[1.1]">
                 Finally, a period tracker that <span class="text-primary">respects you.</span>
@@ -120,8 +162,8 @@
 <button data-cta="scroll" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-semibold shadow-[0_10px_40px_rgba(165,47,86,0.2)] hover:opacity-90 transition-all">Join the Waitlist</button>
 </div>
 </div>
-<div class="relative">
-<div class="aspect-square bg-surface-container-low rounded-[2rem] overflow-hidden shadow-2xl rotate-3 transform transition-transform hover:rotate-0 duration-700 relative">
+<div class="relative w-full max-w-[500px] mx-auto md:max-w-none">
+<div class="hero-mockup aspect-square bg-surface-container-low rounded-[2rem] overflow-hidden shadow-2xl relative">
 <div class="absolute inset-0 flex flex-col items-center justify-between py-12 px-6 bg-white">
 <span class="text-[#A52F56] font-semibold text-lg opacity-60">Flowly Cycle</span>
 <div class="relative w-48 h-48"><!-- Inner Shadow/Glow Ring -->
@@ -144,15 +186,15 @@
 </div>
 </section>
 <!-- Section 2: Problem -->
-<section class="bg-surface-container-low py-32">
-<div class="max-w-[1100px] mx-auto px-8">
-<div class="mb-20">
+<section class="bg-surface-container-low py-20 md:py-32">
+<div class="responsive-container">
+<div class="mb-16 md:mb-20 text-center md:text-left flex flex-col items-center md:items-start">
 <h2 class="text-3xl font-bold text-on-surface mb-4">Tracking shouldn't feel like a chore.</h2>
 <p class="text-on-surface-variant max-w-xl">Most apps are built to sell your data or trap you behind subscriptions. We believe you deserve better.</p>
 </div>
-<div class="grid md:grid-cols-3 gap-8">
+<div class="grid md:grid-cols-3 tablet-grid gap-8">
 <!-- Card 1 -->
-<div class="p-10 rounded-xl space-y-6 bg-[#FDF0F3]">
+<div class="responsive-card p-8 md:p-10 rounded-xl space-y-6 bg-[#FDF0F3]">
 <div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined text-primary">layers_clear</span>
 </div>
@@ -160,7 +202,7 @@
 <p class="text-on-surface-variant leading-relaxed">Constant notifications and cluttered screens make tracking feel like a second job.</p>
 </div>
 <!-- Card 2 -->
-<div class="p-10 rounded-xl space-y-6 bg-[#FDF0F3]">
+<div class="responsive-card p-8 md:p-10 rounded-xl space-y-6 bg-[#FDF0F3]">
 <div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined text-primary">lock_open</span>
 </div>
@@ -168,7 +210,7 @@
 <p class="text-on-surface-variant leading-relaxed">Accessing your own health history shouldn't require a monthly subscription fee.</p>
 </div>
 <!-- Card 3 -->
-<div class="p-10 rounded-xl space-y-6 bg-[#FDF0F3]">
+<div class="responsive-card p-8 md:p-10 rounded-xl space-y-6 bg-[#FDF0F3]">
 <div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined text-primary">security</span>
 </div>
@@ -179,7 +221,7 @@
 </div>
 </section>
 <!-- Section 3: Trust -->
-<section class="py-32 max-w-[1100px] mx-auto px-8 text-center">
+<section class="py-20 md:py-32 responsive-container text-center">
 <h2 class="text-4xl font-bold mb-16">Trust is built on transparency.</h2>
 <div class="grid md:grid-cols-3 gap-12">
 <div class="space-y-4">
@@ -200,8 +242,8 @@
 </div>
 </section>
 <!-- Section 4: Final CTA -->
-<section id="waitlist" class="pb-32 px-8">
-<div class="max-w-[900px] mx-auto bg-surface-container p-12 md:p-20 rounded-[3rem] shadow-[0_40px_100px_rgba(165,47,86,0.1)] text-center relative overflow-hidden">
+<section id="waitlist" class="pb-20 md:pb-32 px-4 md:px-8">
+<div class="responsive-container bg-surface-container p-8 md:p-20 rounded-[2rem] md:rounded-[3rem] shadow-[0_40px_100px_rgba(165,47,86,0.1)] text-center relative overflow-hidden max-w-[900px] mx-auto">
 <div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl -mr-32 -mt-32"></div>
 <div class="relative z-10 space-y-8">
 <h2 class="text-4xl md:text-5xl font-bold">Start your Flowly today.</h2>
@@ -220,7 +262,7 @@
 </main>
 <!-- Footer -->
 <footer class="bg-surface-container-low dark:bg-[#201a1c] w-full py-12 tonal-shift from surface to surface_container_low">
-<div class="flex flex-col items-center text-center px-4 max-w-[1100px] mx-auto">
+<div class="flex flex-col items-center text-center responsive-container">
 <div class="text-xl font-bold text-primary dark:text-[#c5486e] mb-2 tracking-tighter">Flowly</div>
 <p class="font-['Inter'] text-sm leading-relaxed text-[#564145] dark:text-[#ddbfc4] opacity-70">
             © 2024 Mindful Archive. The Mindful Archive - A curated wellness journal experience.
