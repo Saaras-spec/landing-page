@@ -3,7 +3,8 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Flowly | A Period Tracker That Respects You</title>
+<title>Flowly – Simple Period Tracker</title>
+<link rel="icon" type="image/png" href="logo.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Figtree:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -89,13 +90,29 @@
             mix-blend-mode: screen;
             opacity: 0.4;
         }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Figtree', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .logo img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_10px_40px_rgba(165,47,86,0.06)]">
 <div class="flex justify-between items-center px-8 py-4 max-w-[1100px] mx-auto">
-<span class="text-2xl font-bold tracking-tighter text-primary"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-primary fill-1">water_drop</span><span>Flowly</span></div></span>
+<div class="logo text-primary">
+  <img src="logo.png" alt="Flowly logo" />
+  <span>Flowly</span>
+</div>
 <div class="hidden md:flex gap-8 items-center">
 <button data-cta="scroll" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-all active:scale-95">Get Early Access</button>
 </div>
