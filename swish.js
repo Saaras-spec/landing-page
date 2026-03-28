@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────
-// flowly.js — Waitlist functionality
+// swish.js — Waitlist functionality
 // ─────────────────────────────────────────────
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
